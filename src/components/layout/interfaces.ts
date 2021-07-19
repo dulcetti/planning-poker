@@ -1,3 +1,5 @@
+import { ReactElement } from 'react';
+
 export type ILayout = {
-  children: Element[];
+  children: ReactElement[] | ReactElement;
 };
