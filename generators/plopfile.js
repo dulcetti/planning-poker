@@ -11,7 +11,7 @@ module.exports = (plop) => {
     actions: [
       {
         type: 'add',
-        path: '../src/components/{{dashCase name}}/{{dashCase name}}.tsx',
+        path: '../src/components/{{dashCase name}}/index.tsx',
         templateFile: 'templates/component.hbs',
       },
       {
