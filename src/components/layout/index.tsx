@@ -12,11 +12,11 @@ export default function Layout({ children }: ILayout) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Header />
       <S.Layout>
-        <Header />
         <S.Container>{children}</S.Container>
-        <Footer />
       </S.Layout>
+      <Footer />
     </ThemeProvider>
   );
 }
