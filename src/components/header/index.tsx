@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import * as S from './styles';
 
 export default function Header() {
@@ -12,13 +14,19 @@ export default function Header() {
         </S.Brand>
         <S.Menu>
           <S.Item>
-            <S.Link href="/">Home</S.Link>
+            <Link href="/">
+              <S.HeaderLinks>Home</S.HeaderLinks>
+            </Link>
           </S.Item>
           <S.Item>
-            <S.Link href="/play">Play</S.Link>
+            <Link href="/play">
+              <S.HeaderLinks>Play</S.HeaderLinks>
+            </Link>
           </S.Item>
           <S.Item>
-            <S.Link href="/login">Login</S.Link>
+            <Link href="/login">
+              <S.HeaderLinks>Login</S.HeaderLinks>
+            </Link>
           </S.Item>
         </S.Menu>
       </S.Nav>
