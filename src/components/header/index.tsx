@@ -1,8 +1,25 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import * as S from './styles';
 
 export default function Header() {
+  const actualRouter = useRouter();
+  const links = [
+    {
+      href: '/',
+      text: 'Home',
+    },
+    {
+      href: '/play',
+      text: 'Play',
+    },
+    {
+      href: '/login',
+      text: 'Login',
+    },
+  ];
+
   return (
     <S.Header>
       <S.Nav>
@@ -13,21 +30,17 @@ export default function Header() {
           </strong>
         </S.Brand>
         <S.Menu>
-          <S.Item>
-            <Link href="/">
-              <S.HeaderLinks>Home</S.HeaderLinks>
-            </Link>
-          </S.Item>
-          <S.Item>
-            <Link href="/play">
-              <S.HeaderLinks>Play</S.HeaderLinks>
-            </Link>
-          </S.Item>
-          <S.Item>
-            <Link href="/login">
-              <S.HeaderLinks>Login</S.HeaderLinks>
-            </Link>
-          </S.Item>
+          {links.map((link, index) => {
+            const className = actualRouter.pathname === link.href ? '-active' : '';
+
+            return (
+              <S.Item key={index}>
+                <Link href={link.href}>
+                  <S.HeaderLinks className={className}>{link.text}</S.HeaderLinks>
+                </Link>
+              </S.Item>
+            );
+          })}
         </S.Menu>
       </S.Nav>
     </S.Header>
