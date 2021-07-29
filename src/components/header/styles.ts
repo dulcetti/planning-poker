@@ -37,9 +37,10 @@ export const Item = styled.li`
   margin: 0 10px;
 `;
 
-export const Link = styled.a`
+export const HeaderLinks = styled.a`
   align-items: center;
   color: #42b983;
+  cursor: pointer;
   display: flex;
   font-weight: bold;
   height: 100%;
