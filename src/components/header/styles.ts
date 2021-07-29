@@ -46,9 +46,9 @@ export const HeaderLinks = styled.a`
   height: 100%;
   padding: 15px 25px;
 
-  /*
+  &.-active {
     background-color: #fff;
     color: #2c3e50;
     text-decoration: none;
-  */
+  }
 `;
